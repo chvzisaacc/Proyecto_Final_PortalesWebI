@@ -103,13 +103,38 @@ img {
 }
 
 .hero {
+  position: relative;
   max-width: 1180px;
   margin: 0 auto;
   padding: 5rem 2rem 6rem;
   border-top: 1px solid rgba(229, 229, 229, 0.12);
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.hero h1 {
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--linen);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-contenido h1 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(2.4rem, 5vw, 4rem);
@@ -118,11 +143,11 @@ img {
   letter-spacing: -0.01em;
 }
 
-.hero p {
+.hero-contenido p {
   margin-top: 1.4rem;
   max-width: 46ch;
   font-size: 1.1rem;
-  color: rgba(229, 229, 229, 0.75);
+  color: rgba(229, 229, 229, 0.85);
 }
 
 
