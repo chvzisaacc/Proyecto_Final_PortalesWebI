@@ -3,18 +3,16 @@ class Carusel {
     trail = null;
     slides = null;
     slidesCount = 0;
-    intervalTime = 0;
     currentIndex = 0;
     direction = 1;
     btnLeft = null;
     btnRight = null;
-    timeoutId = null;
     onProcess = false;
     indexedButtons = null;
     indexedButtonsItems = [];
 
 
-    constructor( rootSelector, tickSecond = 3 ) {
+    constructor( rootSelector ) {
         this.root = document.querySelector(rootSelector);
         if(!this.root) {
             throw new Error("No se encuentra el elemento root del carusel");
@@ -27,8 +25,6 @@ class Carusel {
         }
         this.generateLateralsUX();
         this.generateIndexedUX();
-        this.intervalTime = tickSecond * 1000;
-        this.tick();
     }
 
     generateIndexedUX(){
@@ -46,8 +42,10 @@ class Carusel {
             btnIdx.addEventListener("click", (e)=>{
                 e.preventDefault();
                 e.stopPropagation();
+                if (this.onProcess) {
+                    return;
+                }
                 this.onProcess = true;
-                this.clearTimeout();
                 this.currentIndex = i;
                 this.moveSlide();
             });
@@ -88,18 +86,16 @@ class Carusel {
                 return;
             }
             this.onProcess = true;
-            this.clearTimeout();
             this.currentIndex--;
             this.moveSlide();
         });
         this.btnRight.addEventListener("click", (e)=>{
             e.preventDefault();
             e.stopPropagation();
-            if(this.onProcess || this.currentIndex >= this.slidesCount ) {
+            if(this.onProcess || this.currentIndex >= this.slidesCount - 1 ) {
                 return;
             }
             this.onProcess = true;
-            this.clearTimeout();
             this.currentIndex++;
             this.moveSlide();
         });
@@ -107,31 +103,15 @@ class Carusel {
         this.root.appendChild(this.btnRight);
     }
 
-    clearTimeout(){
-        if (this.timeoutId) {
-            clearTimeout(this.timeoutId);
-            this.timeoutId = null;
-        }
-    }
-    tick(){
-        this.timeoutId = setTimeout(
-            (()=>{
-                this.onProcess=true;
-                this.currentIndex += this.direction;
-                this.moveSlide();
-            }).bind(this)
-            , this.intervalTime
-        );
-    }
-
     moveSlide(){
-        if(this.currentIndex >= this.slidesCount || this.currentIndex < 0) {
-            this.direction *= -1;
-            this.currentIndex = this.currentIndex + (this.direction * 2);
+        if(this.currentIndex >= this.slidesCount) {
+            this.currentIndex = this.slidesCount - 1;
         }
-        this.trail.style.transform = `translateX(${(100*this.currentIndex*-1)}vw)`;
+        if(this.currentIndex < 0) {
+            this.currentIndex = 0;
+        }
+        this.trail.style.transform = `translateX(${(100 * this.currentIndex * -1)}%)`;
         this.updateCurrentIndexedBtn();
         this.onProcess = false;
-        this.tick();
     }
 }
