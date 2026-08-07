@@ -5,44 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ofertas - Hogar & Estilo</title>
 
+    <link rel="stylesheet" href="css/mainCSS.css">
     <link rel="stylesheet" href="css/ofertasCSS.css">
-    
     <script src="js/mainLA.js" defer></script>
 </head>
 <body>
-    <header>
-        <section class="brand-section">
-            <div class="logo"><span class="text-red">Hogar</span> &amp; <span class="text-white">Estilo</span></div>
-        </section>
-        
+    <header class="header">
         <section class="hmb-button">
             <div></div>
             <div></div>
             <div></div>
         </section>
-
-
-        <nav>
-            <ul>
-                <li><a href="html.html">Inicio</a></li>
+        <nav class="navbar">
+            <div class="logo"><img src="img/logo-c2h.png" alt="C2H Comercial Los 2 Hermanos"></div>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="Catalogo.html">Catálogo</a></li>
                 <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="#">Texto</a></li>
-                <li><a href="#">Texto</a></li>
-                <li><a href="#">Texto</a></li>
-                <li><a href="#">Texto</a></li>
-                <li><a href="#">Texto</a></li>
-                <li><a href="#">Texto</a></li>
-                <li><a href="#">Texto</a></li>
+                <li><a href="GaleriaFotos.html">Galería</a></li>
+                <li><a href="Sucursales.html">Sucursales</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Acerca_De_Nosotros.html">Nosotros</a></li>
+                <li><a href="ComoComprar.html">¿Cómo Comprar?</a></li>
+            </ul>
+            <ul class="sub-nav">
+                <li><a href="PreguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+                <li><a href="Contactenos.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-
-    <main>
-      
-<section class="static-banner">
-    <img src="img/banner.jpg" alt="Banner Oferta">
-</section>
+    <main> 
+    <section class="static-banner">
+        <img src="img/banner.jpg" alt="Banner Oferta">
+    </section>
         <div class="breadcrumbs">
             Inicio > <strong>Ofertas</strong>
         </div>
@@ -185,59 +181,14 @@
         </section>
     </main>
 
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Descubrir</h4>
-                <ul>
-                    <li><a href="#">Muebles de Sala</a></li>
-                    <li><a href="#">Muebles de Comedor</a></li>
-                    <li><a href="#">Dormitorio</a></li>
-                    <li><a href="#">Oficina</a></li>
-                    <li><a href="#">Decoración</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Cuenta</h4>
-                <ul>
-                    <li><a href="#">Administra tu Cuenta</a></li>
-                    <li><a href="#">Mis Pedidos</a></li>
-                    <li><a href="#">Favoritos</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Para la empresa</h4>
-                <ul>
-                    <li><a href="#">Compras Corporativas</a></li>
-                    <li><a href="#">Distribuidores</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Acerca de Hogar & Estilo</h4>
-                <ul>
-                    <li><a href="#">Nuestra Historia</a></li>
-                    <li><a href="#">Oportunidades laborales</a></li>
-                    <li><a href="#">Inversionistas</a></li>
-                    <li><a href="#">Ética y políticas</a></li>
-                    <li><a href="#">Contactar</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright 2026 &copy; Hogar & Estilo. Todos los derechos reservados.</p>
-            <div class="footer-legal">
-                <a href="#">Política de privacidad</a> | 
-                <a href="#">Aviso legal</a> | 
-                <a href="#">Mapa del sitio</a>
-            </div>
+    <footer id="pie" class="footer">
+        <p>&copy; 2026 Comercial los dos hermanos. Todos los derechos reservados.</p>
+        <p class="direccion-sucursal">Sucursal Juticalpa, Olancho, barrio el Castaño, cerca de la terminal de buses, enfrente de la Gasolinera Texaco</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/comercial2hnos?igsh=eWtrcmR2MG1nNHZq" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/share/1PVvoMjZDL/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.tiktok.com/@comercial_los2hermanos?_r=1&_t=ZS-98gkCBZiFtN" target="_blank" rel="noopener">TikTok</a>
         </div>
     </footer>
-
-
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="imgModalEnlarged" alt="Imagen en grande">
-    </div>
 </body>
 </html>

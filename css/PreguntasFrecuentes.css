@@ -6,44 +6,118 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-dark: #0B1320;
+    --accent-red: #B80C09;
+    --accent-blue: #1C77C3;
+    --light-grey: #E5E5E5;
+    --text-grey: #7D8597;
+    --white: #FFFFFF;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     background: #0B1320;
     color: #E5E5E5;
 }
 
-header{
-    padding: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #7D8597
+.header {
+  background-color: var(--linen);
+  color: var(--espresso);
 }
 
-.brand-section h1{
-    color: #E5E5E5;
-    font-size: 25px;
+.navbar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.brand-section span{
-    display: block;
-    font-size: 14px;
-    color: #7D8597;
+.hmb-button {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 }
 
-nav ul{
-    display: flex;
-    gap: 25px;
-    list-style: none;
+.hmb-button div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
 }
 
-nav a{
-    text-decoration: none;
-    color: #E5E5E5;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-nav a:hover{
-    color: #B80C09;
+.logo img {
+  height: 82px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.sub-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
+  margin-top: -2rem;
+  padding-top: 0;
+}
+
+.nav-links a,
+.sub-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  transition: color 0.25s ease;
+}
+
+.nav-links a::after,
+.sub-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #B80C09;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover,
+.sub-nav a:hover{
+  color: #1C77C3;
+}
+
+.nav-links a:hover::after,
+.sub-nav a:hover::after{
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  .navbar {
+    flex-direction: row;
+  }
+  .navbar .logo {
+    margin-bottom: 0;
+  }
 }
 
 .hero{
@@ -65,10 +139,17 @@ nav a:hover{
     margin-bottom: 30px;
 }
 
+.faq h2{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
 .cards{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .card{
@@ -101,10 +182,56 @@ nav a:hover{
     border-radius: 10px; 
 }
 
-footer{
-    text-align: center;
-    padding: 25px;
-    color: #7D8597;
+.footer {
+  background-color: #7D8597;
+  color: var(--espresso);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: #0B1320;
+}
+
+.footer .direccion-sucursal {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #0B1320;
+}
+
+.redes {
+  color: #B80C09;
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+.redes a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--laton-claro);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+
+.redes a:hover {
+  border-color: var(--laton-claro);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--laton);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media(max-width: 900px){
@@ -116,4 +243,52 @@ footer{
     .cards{
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar.hidden {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .nav-links,
+    .sub-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+        gap: 1rem;
+    }
+    .hmb-button {
+        display: flex;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .small-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1180px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .sub-nav {
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }

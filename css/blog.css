@@ -15,6 +15,14 @@
   --font-body: 'Roboto', sans-serif;
 }
 
+:root {
+    --bg-dark: #0B1320;
+    --white: #FFFFFF;
+    --espresso: #E5E5E5;
+    --laton: #B80C09;
+    --laton-claro: #B80C09;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -59,6 +67,19 @@ img {
   gap: 1rem;
 }
 
+.hmb-button {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hmb-button div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -76,33 +97,57 @@ img {
   gap: 2rem;
   flex-wrap: wrap;
 }
+.sub-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
+  margin-top: -2rem;
+  padding-top: 0;
+}
 
-.nav-links a {
+.nav-links a,
+.sub-nav a {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--espresso);
+  color: white;
   position: relative;
+  text-decoration: none;
   padding-bottom: 0.2rem;
   transition: color 0.25s ease;
 }
 
-.nav-links a::after {
+.nav-links a::after,
+.sub-nav a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 0;
   height: 1px;
-  background-color: var(--laton-claro);
+  background-color: #B80C09;
   transition: width 0.25s ease;
 }
 
-.nav-links a:hover {
-  color: var(--laton-claro);
+.nav-links a:hover,
+.sub-nav a:hover{
+  color: #1C77C3;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.sub-nav a:hover::after{
   width: 100%;
+}
+
+@media (min-width: 720px) {
+  .navbar {
+    flex-direction: row;
+  }
+  .navbar .logo {
+    margin-bottom: 0;
+  }
 }
 
 .hero {
@@ -292,8 +337,8 @@ img {
 }
 
 .footer p {
+  color: #0B1320;
   font-size: 0.9rem;
-  color: rgba(229, 229, 229, 0.7);
 }
 
 .redes {
@@ -347,5 +392,53 @@ button:focus-visible {
 
   .seccion {
     padding: 3.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar.hidden {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .nav-links,
+    .sub-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+        gap: 1rem;
+    }
+    .hmb-button {
+        display: flex;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .small-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1180px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .sub-nav {
+    justify-content: center;
+    margin-top: 1rem;
   }
 }

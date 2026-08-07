@@ -1,3 +1,101 @@
+.header {
+  background-color: var(--linen);
+  color: var(--espresso);
+}
+
+.navbar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 82px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.sub-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
+  margin-top: -2rem;
+  padding-top: 0;
+}
+
+.nav-links a,
+.sub-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  transition: color 0.25s ease;
+}
+
+.nav-links a::after,
+.sub-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #B80C09;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover,
+.sub-nav a:hover{
+  color: #1C77C3;
+}
+
+.nav-links a:hover::after,
+.sub-nav a:hover::after{
+  width: 100%;
+}
+
+.hmb-button {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hmb-button div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+}
+
+@media (min-width: 720px) {
+  .navbar {
+    flex-direction: row;
+  }
+  .navbar .logo {
+    margin-bottom: 0;
+  }
+}
 .static-banner {
     width: 100%;
     height: auto;
@@ -127,8 +225,51 @@
 @media (max-width: 992px) {
     .offers-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 768px) {
-    .static-banner {
-        height: 250px;
+    .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
+    .navbar.hidden {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .nav-links,
+    .sub-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+        gap: 1rem;
+    }
+    .hmb-button {
+        display: flex;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .small-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1180px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .sub-nav {
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }

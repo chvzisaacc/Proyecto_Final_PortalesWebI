@@ -13,6 +13,14 @@
   --font-body: 'Roboto', sans-serif;
 }
 
+:root {
+    --bg-dark: #0B1320;
+    --white: #FFFFFF;
+    --espresso: #E5E5E5;
+    --laton: #B80C09;
+    --laton-claro: #B80C09;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -45,9 +53,8 @@ button {
 }
 
 .header {
-  background-color: var(--fondo);
-  color: var(--texto);
-  border-bottom: 1px solid rgba(229, 229, 229, 0.12);
+  background-color: var(--linen);
+  color: var(--espresso);
 }
 
 .navbar {
@@ -61,12 +68,28 @@ button {
   gap: 1rem;
 }
 
+.hmb-button {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hmb-button div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+}
+
 .logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.02em;
-  color: var(--boton);
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 82px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -75,41 +98,57 @@ button {
   gap: 2rem;
   flex-wrap: wrap;
 }
+.sub-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
+  margin-top: -2rem;
+  padding-top: 0;
+}
 
-.nav-links a {
-  position: relative;
-  padding-bottom: 0.2rem;
-  color: var(--texto);
+.nav-links a,
+.sub-nav a {
   font-size: 0.95rem;
   font-weight: 500;
+  color: white;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 0.2rem;
   transition: color 0.25s ease;
 }
 
-.nav-links a::after {
+.nav-links a::after,
+.sub-nav a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 0;
   height: 1px;
-  background-color: var(--boton);
+  background-color: #B80C09;
   transition: width 0.25s ease;
 }
 
-.nav-links a:hover {
-  color: var(--boton-claro);
+.nav-links a:hover,
+.sub-nav a:hover{
+  color: #1C77C3;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.sub-nav a:hover::after{
   width: 100%;
 }
 
-.nav-links a[aria-current="page"] {
-  color: var(--boton);
-}
-
-.nav-links a[aria-current="page"]::after {
-  width: 100%;
+@media (min-width: 720px) {
+  .navbar {
+    flex-direction: row;
+  }
+  .navbar .logo {
+    margin-bottom: 0;
+  }
 }
 
 .hero {
@@ -381,19 +420,25 @@ button {
 }
 
 .footer {
+  background-color: #7D8597;
+  color: var(--espresso);
   padding: 3rem 2rem;
-  color: var(--texto);
-  background-color: var(--fondo);
-  border-top: 1px solid rgba(229, 229, 229, 0.12);
   text-align: center;
 }
 
 .footer p {
-  color: var(--detalle);
   font-size: 0.9rem;
+  color: #0B1320;
+}
+
+.footer .direccion-sucursal {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #0B1320;
 }
 
 .redes {
+  color: #B80C09;
   margin-top: 1.2rem;
   display: flex;
   justify-content: center;
@@ -401,25 +446,29 @@ button {
 }
 
 .redes a {
-  color: var(--boton);
-  border-bottom: 1px solid transparent;
+  text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  transition:
-    border-color 0.25s ease,
-    color 0.25s ease;
+  color: var(--laton-claro);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
 }
 
 .redes a:hover {
-  color: var(--boton-claro);
-  border-color: var(--boton-claro);
+  border-color: var(--laton-claro);
 }
 
 a:focus-visible,
-button:focus-visible,
-.foto-item:focus-visible {
-  outline: 2px solid var(--boton-claro);
+button:focus-visible {
+  outline: 2px solid var(--laton);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -555,5 +604,52 @@ button:focus-visible,
   .galeria-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar.hidden {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .nav-links,
+    .sub-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+        gap: 1rem;
+    }
+    .hmb-button {
+        display: flex;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .small-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (min-width: 720px) and (max-width: 1180px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .sub-nav {
+    justify-content: center;
+    margin-top: 1rem;
   }
 }
