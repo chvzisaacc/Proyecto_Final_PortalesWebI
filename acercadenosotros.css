@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: #0B1320;
+    color: #E5E5E5;
+    font-family: "Roboto", 'Times New Roman', sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    background-color: #070D17;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #070D17;
+    border-bottom: 2px solid #B80C09;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E5E5E5;
+    margin-bottom: 0.5rem;
+}
+
+.navbar .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .nav-links li a {
+    color: #E5E5E5;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: #B80C09;
+}
+
+@media (min-width: 720px) {
+    .navbar {
+        flex-direction: row;
+    }
+    .navbar .logo {
+        margin-bottom: 0;
+    }
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 19, 32, 0.75);
+    z-index: 2;
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 1.5rem;
+    max-width: 800px;
+}
+
+.hero-contenido h1 {
+    font-size: 2.5rem;
+    color: #E5E5E5;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-contenido p {
+    font-size: 1.2rem;
+    color: #E5E5E5;
+    margin: 0;
+    line-height: 1.5;
+}
+
+main .historia {
+    display: flex;
+    flex-direction: column;
+    background-color: #131E2F;
+    border-top: 1px solid #1C2B42;
+    border-bottom: 1px solid #1C2B42;
+}
+
+main .historia .bloque-izquierdo {
+    flex: 1;
+    padding: 2.5rem 4rem;
+}
+
+main .historia .bloque-izquierdo h2 {
+    color: #E5E5E5;
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+main .historia .bloque-izquierdo p {
+    line-height: 1.6;
+    color: #E5E5E5;
+    font-size: 1.05rem;
+}
+
+main .historia .bloque-derecho {
+    flex: 1;
+}
+
+main .historia .bloque-derecho picture,
+main .historia .bloque-derecho img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 720px) {
+    main .historia {
+        flex-direction: row-reverse;
+        align-items: stretch;
+    }
+}
+
+.mision-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.tarjeta-mv {
+    background-color: #131E2F;
+    border: 1px solid #1C2B42;
+    border-top: 4px solid #B80C09;
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.tarjeta-mv h2 {
+    color: #E5E5E5;
+    margin-top: 0;
+}
+
+.tarjeta-mv p {
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .mision-vision {
+        flex-direction: row;
+    }
+}
+
+.objetivos {
+    padding: 2.5rem 1.5rem;
+    background-color: #070D17;
+}
+
+.objetivos h2 {
+    text-align: center;
+    color: #E5E5E5;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.lista-objetivos {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lista-objetivos li {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #E5E5E5;
+}
+
+.politica-calidad {
+    padding: 2.5rem 1.5rem;
+    background-color: #131E2F;
+    text-align: center;
+    border-top: 1px solid #1C2B42;
+    border-bottom: 1px solid #1C2B42;
+}
+
+.politica-calidad h2 {
+    color: #E5E5E5;
+    margin-top: 0;
+}
+
+.politica-calidad p {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.equipo {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background-color: #0B1320;
+}
+
+.equipo h2 {
+    color: #E5E5E5;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.contenedor-equipo {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0 auto;
+}
+
+.tarjeta-equipo {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 1.25rem;
+    background-color: #131E2F;
+    border: 1px solid #1C2B42;
+    border-left: 4px solid #B80C09;
+    border-radius: 8px;
+}
+
+.detalle-equipo h3 {
+    margin: 0 0 0.3rem 0;
+    color: #E5E5E5;
+}
+
+.detalle-equipo p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #B0B8C4;
+    line-height: 1.4;
+}
+
+@media (min-width: 720px) {
+    .contenedor-equipo {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .tarjeta-equipo {
+        flex-basis: calc(50% - 0.75rem);
+    }
+}
+
+@media (min-width: 1025px) {
+    .tarjeta-equipo {
+        flex-basis: calc(33.333% - 1rem);
+    }
+}
+
+.pie-pagina {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: #050A12;
+    color: #E5E5E5;
+    padding: 2rem 1.5rem;
+    margin: 0;
+    text-align: center;
+    border-top: 1px solid #1C2B42;
+}
+
+.pie-pagina a {
+    color: #E5E5E5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pie-pagina a:hover {
+    color: #B80C09;
+}
+
+.pie-pagina .telefonos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-weight: bold;
+}
+
+.pie-pagina nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 720px) {
+    .pie-pagina p {
+        flex-basis: auto;
+    }
+    .pie-pagina nav ul {
+        flex-direction: row;
+        gap: 1.25rem;
+    }
+}
