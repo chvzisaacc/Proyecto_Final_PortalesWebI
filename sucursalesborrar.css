@@ -59,11 +59,14 @@ img {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.02em;
-  color: var(--laton-claro);
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 82px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
