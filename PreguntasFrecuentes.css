@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #0B1320;
+    color: #E5E5E5;
+}
+
+header{
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #7D8597
+}
+
+.brand-section h1{
+    color: #E5E5E5;
+    font-size: 25px;
+}
+
+.brand-section span{
+    display: block;
+    font-size: 14px;
+    color: #7D8597;
+}
+
+nav ul{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a{
+    text-decoration: none;
+    color: #E5E5E5;
+}
+
+nav a:hover{
+    color: #B80C09;
+}
+
+.hero{
+    padding: 80px 10%;
+}
+
+.hero h2{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p{
+    color: #7D8597;
+    max-width: 600px;
+    font-size: 18px;
+}
+
+.faq{
+    margin-bottom: 30px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card{
+    background: #1C77C3;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.card h3{
+    margin-bottom: 15px;
+}
+
+.card p{
+    color:#E5E5E5;
+}
+
+.contacto{
+    text-align: center;
+    padding: 70px;
+    background: #B80C09;
+}
+
+.contacto a{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #0B1320;
+    color: white;
+    border-radius: 10px; 
+}
+
+footer{
+    text-align: center;
+    padding: 25px;
+    color: #7D8597;
+}
+
+@media(max-width: 900px){
+    header{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cards{
+        grid-template-columns: 1fr;
+    }
+}
