@@ -1,0 +1,134 @@
+.static-banner {
+    width: 100%;
+    height: auto;
+    background-color: var(--light-grey);
+    overflow: hidden;
+}
+
+.static-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.breadcrumbs {
+    padding: 20px 5% 10px;
+    font-size: 0.9rem;
+    color: var(--text-grey);
+    background-color: var(--light-grey);
+}
+
+.breadcrumbs strong {
+    color: var(--accent-blue);
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 5% 20px;
+    background-color: var(--light-grey);
+}
+
+.page-header h2 {
+    font-size: 2rem;
+    color: var(--accent-blue);
+}
+
+.page-header svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--accent-blue);
+}
+
+.offers-section {
+    padding: 0 5% 50px;
+    background-color: var(--light-grey);
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.offer-card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+}
+
+.offer-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #6a5acd;
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.offer-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.offer-card .card-body h3 {
+    color: var(--bg-dark);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.price-container {
+    margin-bottom: 15px;
+}
+
+.offer-card .new-price {
+    font-size: 1.4rem;
+    color: var(--accent-red);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.offer-card .old-price {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    text-decoration: line-through;
+}
+
+.offer-card .btn-cta {
+    width: 100%;
+    border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .offers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .static-banner {
+        height: 250px;
+    }
+}
