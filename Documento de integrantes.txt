@@ -1,0 +1,34 @@
+Lista de integrantes de los miembros del equipo D
+
+1. 
+Isaac Emanuel Chávez Cruz - 0801200509509 
+Usuario de github: chvzisaacc
+Ramas trabajadas: Contactenos/IC y AcercaDeNosotros/IC 
+
+2.
+Josué Javier Mendoza Laínez - 0801200613354
+Usuario de github: JosueMendoza375
+Ramas trabajadas: Catalogo/JM
+
+3.
+Jorge Jose Rodriguez Martinez - 0801200602427
+Usuario de github: exobonnie
+Ramas trabajadas: Blog/JR y Sucursales/JR
+
+4.
+Angel David Ferrufino Banegas - 0801200614092
+Usuario de github: mykeefr09
+Ramas trabajadas: ComoComprar/AF y PreguntasFrecuentes/AF
+
+5.
+Gabriel Alonso Maldonado Sanchez - 0801200517971
+Usuario de github: gams18
+Ramas trabajadas: GaleriaFotos/GM
+
+6.Luis Fabricio Ávila Bánegas - 0801200606984
+Usuario de github: LuisAvila22
+Ramas trabajadas: Inicio/LA
+
+Ramas adicionales que se trabajaron: Main, CSS, IMAGENES Y JAVASCRIPT. 
+
+ 
